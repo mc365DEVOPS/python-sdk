@@ -33,6 +33,8 @@ dependencies = [
     "uvicorn>=0.31.1; sys_platform != 'emscripten'",
     "jsonschema>=4.20.0",
     "pywin32>=310; sys_platform == 'win32'",
+    "typer>=0.16.0",
+    "python-dotenv>=1.1.1",
 ]
 
 [project.optional-dependencies]
@@ -116,7 +118,11 @@ extend-exclude = ["README.md"]
 "tests/server/fastmcp/test_func_metadata.py" = ["E501"]
 
 [tool.uv.workspace]
-members = ["examples/servers/*", "examples/snippets"]
+members = [
+    "examples/servers/*",
+ "examples/snippets",
+ "mcp-server-demo",
+]
 
 [tool.uv.sources]
 mcp = { workspace = true }
